@@ -28,6 +28,8 @@ dependencies {
     implementation 'io.quarkus:quarkus-rest-client'
     
     implementation 'io.vertx:vertx-auth-jwt:3.9.5'
+
+    implementation 'io.quarkus:quarkus-resteasy-jsonb'
 }
 
 group 'com.assignment'

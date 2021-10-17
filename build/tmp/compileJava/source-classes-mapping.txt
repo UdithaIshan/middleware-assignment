@@ -1,5 +1,5 @@
-com/assignment/petstore/secure/TestSecureController.java
- com.assignment.petstore.secure.TestSecureController
+com/assignment/petstore/PetstoreRestApplication.java
+ com.assignment.petstore.PetstoreRestApplication
 com/assignment/petstore/resilient/ResilienceController.java
  com.assignment.petstore.resilient.ResilienceController
 com/assignment/petstore/health/ServiceReadyHealthCheck.java
@@ -8,8 +8,8 @@ com/assignment/petstore/openapi/Booking.java
  com.assignment.petstore.openapi.Booking
 com/assignment/petstore/openapi/Destination.java
  com.assignment.petstore.openapi.Destination
-com/assignment/petstore/PetstoreRestApplication.java
- com.assignment.petstore.PetstoreRestApplication
+com/assignment/petstore/secure/TestSecureController.java
+ com.assignment.petstore.secure.TestSecureController
 com/assignment/petstore/config/ConfigTestController.java
  com.assignment.petstore.config.ConfigTestController
 com/assignment/petstore/secure/MPJWTToken.java

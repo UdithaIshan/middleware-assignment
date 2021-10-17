@@ -13,7 +13,7 @@ public class Pet {
 
     @Schema(required = true, description = "Pet type")
     @JsonProperty("pet_type")
-    private String petType;
+    private Type petType;
 
     @Schema(required = true, description = "Pet name")
     @JsonProperty("pet_name")
@@ -30,11 +30,11 @@ public class Pet {
         this.petId = petId;
     }
 
-    public String getPetType() {
+    public Type getPetType() {
         return petType;
     }
 
-    public void setPetType(String petType) {
+    public void setPetType(Type petType) {
         this.petType = petType;
     }
 
@@ -57,7 +57,13 @@ public class Pet {
     public Pet() {
     }
 
-    public Pet(Integer petId, String petType, String petName, Integer petAge) {
+    public Pet(Type petType, String petName, Integer petAge) {
+        this.petType = petType;
+        this.petName = petName;
+        this.petAge = petAge;
+    }
+
+    public Pet(Integer petId, Type petType, String petName, Integer petAge) {
         this.petId = petId;
         this.petType = petType;
         this.petName = petName;

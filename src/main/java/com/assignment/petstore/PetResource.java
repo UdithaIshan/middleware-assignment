@@ -1,17 +1,13 @@
 package com.assignment.petstore;
 
-import java.util.*;
-import java.util.stream.Collectors;
-
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
-
-import org.eclipse.microprofile.openapi.annotations.media.Content;
-import org.eclipse.microprofile.openapi.annotations.media.Schema;
-import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
-import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 @Path("/v1/pets")
 @Produces("application/json")
@@ -32,7 +28,7 @@ public class PetResource {
         int index = pets.size();
         pet.setPetId(++index);
         pets.add(pet);
-        return Response.ok(pet).build();
+        return Response.ok(pet).status(201).build();
     }
 
     @GET

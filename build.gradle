@@ -30,6 +30,9 @@ dependencies {
     implementation 'io.vertx:vertx-auth-jwt:3.9.5'
 
     implementation 'io.quarkus:quarkus-resteasy-jsonb'
+
+    testImplementation 'io.quarkus:quarkus-junit5'
+    testImplementation 'io.rest-assured:rest-assured'
 }
 
 group 'com.assignment'

@@ -1,18 +1,10 @@
-# MicroProfile generated Application
-
-## Introduction
-
-MicroProfile Starter has generated this MicroProfile application for you.
-
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
-
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+# SCS3203 Assignment
 
 ## Packaging and running the application
 
-If you want to build an _??ber-jar_, execute the following command:
+If you want to build an uber-jar, execute the following command:
 
-    ./gradlew build -Dquarkus.package.type=uber-jar
+    ./gradlew quarkusBuild --uber-jar
 
 To run the application:
 
@@ -25,41 +17,83 @@ The application can be also packaged using simple:
 It produces the `quarkus-run.jar` file in the `build/quarkus-app/` directory.
 Be aware that it is not an _??ber-jar_ as the dependencies are copied into the `build/quarkus-app/lib/` directory.
 
-To launch the test page, open your browser at the following URL
+## How to run tests
+     ./gradlew test
 
-    http://localhost:8080/index.html
+## Endpoints
 
-## Running the application in dev mode
+Get all pets:
 
-You can run your application in dev mode that enables live coding using:
+```aidl
+curl --location --request GET 'http://localhost:8080/v1/pets'
+```
 
-    ./gradlew quarkusDev
+Get pet by id:
+```aidl
+curl --location --request GET 'http://localhost:8080/v1/pets/1'
+```
 
-> **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at http://localhost:8080/q/dev/.
+Add new pet:
+```aidl
+curl --location --request POST 'http://localhost:8080/v1/pets' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "petAge": 2,
+    "petName": "Banti",
+    "petType": {
+        "petType": "Dog"
+    }
+}'
+```
 
-## Creating a native executable
+Update a pet by id:
+```aidl
+curl --location --request PUT 'http://localhost:8080/v1/pets/2' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+        "petAge": 8,
+        "petName": "Brown",
+        "petType": {
+            "petType": "Dog"
+        }
+    }'
+```
 
-Mind having GRAALVM_HOME set to your Mandrel or GraalVM installation.
+Delete a pet:
+```aidl
+curl --location --request DELETE 'http://localhost:8080/v1/pets/2'
+```
 
-You can create a native executable using:
+Get pet types:
+    
+    curl --location --request GET 'http://localhost:8080/v1/pets/types'
 
-    ./gradlew build -Dquarkus.package.type=native
+Add new pet type:
 
-Or, if you don't have [Mandrel](https://github.com/graalvm/mandrel/releases/) or
-[GraalVM](https://github.com/graalvm/graalvm-ce-builds/releases) installed, you can run the native executable
-build in a container using:
+```aidl
+curl --location --request POST 'http://localhost:8080/v1/pets/types' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "petType": "Cat"
+}'
+```
 
-    ./gradlew build -Dquarkus.package.type=native -Dquarkus.native.container-build=true
+Update pet type:
 
-Or to use Mandrel distribution:
+```aidl
+curl --location --request PUT 'http://localhost:8080/v1/pets/types/1' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "petType": "Male Dog"
+}'
+```
 
-    ./gradlew build -Dquarkus.package.type=native -Dquarkus.native.container-build=true -Dquarkus.native.builder-image=quay.io/quarkus/ubi-quarkus-mandrel:20.3-java11
+Delete pet type:
 
-You can then execute your native executable with:
+```aidl
+curl --location --request DELETE 'http://localhost:8080/v1/pets/types/1'
+```
 
-    ./build/petstore-runner
-
-If you want to learn more about building native executables, please consult https://quarkus.io/guides/building-native-image.
 
 ## Specification examples
 

@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.acme.PetResourceTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-10-17T13:34:51" hostname="LAPTOP-VADJ5RCL" time="1.574">
+<testsuite name="org.acme.PetResourceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-10-19T13:33:43" hostname="LAPTOP-VADJ5RCL" time="1.42">
   <properties/>
-  <testcase name="testPetAddEndpoint()" classname="org.acme.PetResourceTest" time="1.474"/>
-  <testcase name="testAllPetsEndpoint()" classname="org.acme.PetResourceTest" time="0.036"/>
-  <testcase name="testPetUpdateEndpoint()" classname="org.acme.PetResourceTest" time="0.022"/>
-  <testcase name="testPetsEndpoint()" classname="org.acme.PetResourceTest" time="0.018"/>
-  <testcase name="testPetDeleteEndpoint()" classname="org.acme.PetResourceTest" time="0.018"/>
+  <testcase name="testPetAddEndpoint()" classname="org.acme.PetResourceTest" time="1.42"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[Oct 17, 2021 7:04:48 PM org.jboss.threads.Version <clinit>
+  <system-err><![CDATA[Oct 19, 2021 7:03:40 PM org.jboss.threads.Version <clinit>
 INFO: JBoss Threads version 3.1.1.Final
-Oct 17, 2021 7:04:50 PM org.jboss.resteasy.core.ResteasyDeploymentImpl processApplication
+Oct 19, 2021 7:03:42 PM org.jboss.resteasy.core.ResteasyDeploymentImpl processApplication
 INFO: RESTEASY002225: Deploying javax.ws.rs.core.Application: class com.assignment.petstore.PetstoreRestApplication
-Oct 17, 2021 7:04:50 PM org.jboss.threads.Version <clinit>
+Oct 19, 2021 7:03:42 PM org.jboss.threads.Version <clinit>
 INFO: JBoss Threads version 3.1.1.Final
-Oct 17, 2021 7:04:51 PM io.quarkus.bootstrap.runner.Timing printStartupTime
-INFO: Quarkus 1.7.6.Final on JVM started in 3.182s. Listening on: http://0.0.0.0:8081
-Oct 17, 2021 7:04:51 PM io.quarkus.bootstrap.runner.Timing printStartupTime
+Oct 19, 2021 7:03:43 PM io.quarkus.bootstrap.runner.Timing printStartupTime
+INFO: Quarkus 1.7.6.Final on JVM started in 2.809s. Listening on: http://0.0.0.0:8081
+Oct 19, 2021 7:03:43 PM io.quarkus.bootstrap.runner.Timing printStartupTime
 INFO: Profile test activated. 
-Oct 17, 2021 7:04:51 PM io.quarkus.bootstrap.runner.Timing printStartupTime
+Oct 19, 2021 7:03:43 PM io.quarkus.bootstrap.runner.Timing printStartupTime
 INFO: Installed features: [cdi, jaeger, mutiny, rest-client, resteasy, resteasy-jsonb, security, smallrye-context-propagation, smallrye-fault-tolerance, smallrye-health, smallrye-jwt, smallrye-metrics, smallrye-openapi, smallrye-opentracing, swagger-ui, vertx, vertx-web]
 ]]></system-err>
 </testsuite>

@@ -26,6 +26,9 @@ public class PetResource {
     @Consumes(MediaType.APPLICATION_JSON)
     public Response add(Pet pet) {
         int index = pets.size();
+        int typeId = types.stream()
+                .filter(a -> Objects.equals(a.getPetType().toLowerCase(), pet.getPetType().getPetType().toLowerCase())).collect(Collectors.toList()).get(0).getTypeId();
+        pet.getPetType().setTypeId(typeId);
         pet.setPetId(++index);
         pets.add(pet);
         return Response.ok(pet).status(201).build();
@@ -53,6 +56,9 @@ public class PetResource {
     public  Response updatePet(@PathParam("petId") int petId, Pet pet) {
         try {
             pet.setPetId(petId);
+            int typeId = types.stream()
+                    .filter(a -> Objects.equals(a.getPetType().toLowerCase(), pet.getPetType().getPetType().toLowerCase())).collect(Collectors.toList()).get(0).getTypeId();
+            pet.getPetType().setTypeId(typeId);
             pets.set(petId - 1, pet);
             return Response.ok(pet).build();
         }

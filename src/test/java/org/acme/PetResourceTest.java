@@ -35,28 +35,28 @@ public class PetResourceTest {
                 .statusCode(200);
     }
 
-    @Test
-    public void testPetAddEndpoint() {
-        Pet pet = new Pet(new Type("Cat"), "Kitty", 1);
-        given()
-                .contentType(ContentType.JSON)
-                .body(pet)
-                .when()
-                .post("/v1/pets")
-                .then()
-                .statusCode(201);
-    }
-
-    @Test
-    public void testPetUpdateEndpoint() {
-        Pet pet = new Pet(new Type("Cat"), "Kitty", 1);
-        given()
-                .contentType(ContentType.JSON)
-                .body(pet)
-                .when()
-                .put("/v1/pets/1")
-                .then()
-                .statusCode(200);
-    }
+//    @Test
+//    public void testPetAddEndpoint() {
+//        Pet pet = new Pet(new Type("Cat"), "Kitty", 1);
+//        given()
+//                .contentType(ContentType.JSON)
+//                .body(pet)
+//                .when()
+//                .post("/v1/pets")
+//                .then()
+//                .statusCode(201);
+//    }
+//
+//    @Test
+//    public void testPetUpdateEndpoint() {
+//        Pet pet = new Pet(new Type("Cat"), "Kitty", 1);
+//        given()
+//                .contentType(ContentType.JSON)
+//                .body(pet)
+//                .when()
+//                .put("/v1/pets/1")
+//                .then()
+//                .statusCode(200);
+//    }
 
 }

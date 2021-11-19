@@ -17,6 +17,22 @@ The application can be also packaged using simple:
 It produces the `quarkus-run.jar` file in the `build/quarkus-app/` directory.
 Be aware that it is not an _??ber-jar_ as the dependencies are copied into the `build/quarkus-app/lib/` directory.
 
+## How to run using Docker
+
+First build the application:
+
+    ./gradlew build
+    
+
+Then, build the image with:
+
+    docker build -f src/main/docker/Dockerfile.jvm -t quarkus/petstore .
+
+Then run the container using:
+
+    docker run -i --rm -p 8080:8080 quarkus/petstore
+
+
 ## How to run tests
      ./gradlew test
 
